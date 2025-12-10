@@ -1,0 +1,50 @@
+* {
+  border-radius: 3px;
+  font-family: AdwaitaMono Nerd Font;
+  font-size: 13px;
+  margin: 0px 3px;
+  margin-top: 2px;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+#workspaces button {
+  all: initial;
+  padding: 4px 4px;
+  margin-left: -3px;
+  margin-right: 9px;
+  border-radius: 3px;
+  background-color: #cba6f7;
+  color: #181825;
+}
+
+#wireplumber,
+#backlight,
+#language,
+#battery,
+#network,
+#memory,
+#clock,
+#tray, 
+#mode,
+#cpu {
+  padding: 4px 8px;
+  background-color: #cba6f7;
+  color: #181825;
+}
+
+#battery {
+  margin-right: 0px;
+}
+
+tooltip {
+  padding: 8px;
+  background-color: #131822;
+}
+
+tooltip label {
+  padding: 5px;
+  background-color: #131822;
+}
