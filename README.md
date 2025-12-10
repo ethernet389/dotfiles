@@ -1,8 +1,8 @@
 # dotfiles
 
-Style: Catppuccin Mocha
+Style: _Catppuccin Mocha_
 
-Configured Software:
+## Configured Software
 - `swayfx`
   - *Note*: `sway` can be used instead, but you should remove `corner_radius` in `.config/sway/config`
 - `nvim`
@@ -10,7 +10,7 @@ Configured Software:
 - `rofi`
 - `waybar`
 - `flameshot`
-- `gtk-3.0, gtk-4.0`
+- `gtk-2.0, gtk-3.0, gtk-4.0`
 - `zsh`
 
 ## Pictures
