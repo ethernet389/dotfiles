@@ -27,19 +27,5 @@ alias sway="sway --unsupported-gpu"
 alias nmtui="unset COLORTERM; TERM=xterm-old nmtui; export COLORTERM=truecolor"
 alias please="sudo"
 
-# Wayland specification
-export SDL_VIDEODRIVER=wayland
-export _JAVA_AWT_WM_NONREPARENTING=1
-export QT_QPA_PLATFORM=wayland
-export QT_QPA_PLATFORMTHEME=gtk2
-export XDG_CURRENT_DESKTOP=sway
-export XDG_SESSION_DESKTOP=sway
-export MOZ_WAYLAND=1
-export MOZ_ENABLE_WAYLAND=1
-export GDK_BACKEND=wayland
-
-# NVIDIA specification
-export GBM_BACKEND=nvidia-drm
-export __GLX_VENDOR_LIBRARY_NAME=nvidia
-
+# Some Rider shit
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
