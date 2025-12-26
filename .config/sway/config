@@ -6,6 +6,8 @@ font pango: AdwaitaMono Nerd Font 10
 seat * xcursor_theme default 20
 # seat * hide_cursor 1000
 
+# Start ydotool daemon
+exec ydotoold
 
 # Set random wallpaper on config reload
 # set $wallpapers_path ~/.config/sway/wallpapers
