@@ -33,7 +33,7 @@ set $up    k
 set $right l
 
 set $term     alacritty
-set $menu     rofi -show drun -modes "drun,window,calc"
+set $menu     rofi -show drun -modes "drun"
 set $file_mgr nautilus
 
 
