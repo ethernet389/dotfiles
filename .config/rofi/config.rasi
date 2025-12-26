@@ -1,7 +1,7 @@
 @import "themes/catppuccin-mocha"
 
 configuration {
-	modes: "drun,window,calc";
+	modes: "drun";
 	font: "AdwaitaMono Nerd Font 14";
 /*	location: 0;*/
 /*	yoffset: 0;*/
