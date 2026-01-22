@@ -198,7 +198,8 @@ bindsym Print exec flameshot gui
 # Magnifier tool
 bindsym Insert exec wooz
 
-
+# Keyboard display tool
+bindsym --locked Alt+F4 exec "pkill -x wshowkeys > /dev/null || wshowkeys -a bottom -l 60 -F 'monospace 24'"
 # Status bar
 bar {
   swaybar_command waybar

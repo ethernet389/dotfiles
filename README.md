@@ -15,6 +15,7 @@ Needed software:
 - `nvim` (pure optional)
 - `zsh` 
 - `wooz` (bind Insert in sway config)
+- `wshowkeys-mao-git` (bind Alt+F4 in sway config)
 
 *NB0*: I am sure that I am missing some software.
 
