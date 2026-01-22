@@ -25,12 +25,12 @@ while true; do
   current_delta=(($current_level - $last_notified_level))
 
   if [ $current_level -le $predeath_level ]; then
-    notify-send "Predeath Battery Level!" "Beg you, charge me now ($current_level)."
+    notify-send  -t 5000 "Predeath Battery Level!" "Beg you, charge me now ($current_level)."
   elif [ $current_level -le $extreme_low_level ] && [ $current_delta -ge $level_threshold ]; then
-    notify-send "Extreme Low Battery Level!" "Please, charge me ($current_level)."
+    notify-send -t 5000 "Extreme Low Battery Level!" "Please, charge me ($current_level)."
     last_notified_level=$current_level
   elif [ $current_level -le $low_level ] && [ $current_delta -ge $level_threshold ]; then
-    notify-send "Low Battery Level!" "Charge me ($current_level)."
+    notify-send  -t 5000 "Low Battery Level!" "Charge me ($current_level)."
     last_notified_level=$current_level
   fi
 

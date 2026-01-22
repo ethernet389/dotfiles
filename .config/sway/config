@@ -190,7 +190,7 @@ bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_SOURCE@ toggle
 
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-bindsym --locked Alt+F5 exec ~/.config/sway/brightnessctl_toggle.sh
+bindsym --locked Alt+F5 exec ~/.config/sway/brightnessctl-toggle.sh
 
 bindsym Print exec flameshot gui
 
