@@ -3,18 +3,22 @@
 Style: _Catppuccin Mocha_
 
 Needed software:
-1. swayfx
-2. waybar
-3. brightnessctl
-4. mako
-5. rofi
-6. nautilus
-7. flameshot
-8. alacritty
-9. nvim
-10. zsh
+- `swayfx` (only used for `corner_radius` in sway config)
+- `waybar` 
+- `brightnessctl` (scripts in sway config folder)
+- `wireplumber` (binds in sway config)
+- `mako` (need for brightness and volume changing)
+- `rofi` (bind Meta+D in sway config)
+- `nautilus` (bind Meta+Ctrl+F in sway config)
+- `flameshot` (bind Print in sway config)
+- `alacritty` (bind Meta+Enter in sway config)
+- `nvim` (pure optional)
+- `zsh` 
+- `wooz` (bind Insert in sway config)
 
-*NB*: check page on Arch Wiki about GTK and QT unified look.
+*NB0*: I am sure that I am missing some software.
+
+*NB1*: check page on Arch Wiki about GTK and QT unified look.
 `nwg-look` may help you in this
 
 ## Pictures

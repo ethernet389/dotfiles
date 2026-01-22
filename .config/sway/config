@@ -192,7 +192,11 @@ bindsym --locked XF86MonBrightnessDown exec ~/.config/sway/set-brightness-and-no
 bindsym --locked XF86MonBrightnessUp exec ~/.config/sway/set-brightness-and-notify.sh increase
 bindsym --locked Alt+F5 exec ~/.config/sway/set-brightness-and-notify.sh toggle
 
+# Screenshot tool
 bindsym Print exec flameshot gui
+
+# Magnifier tool
+bindsym Insert exec wooz
 
 
 # Status bar
