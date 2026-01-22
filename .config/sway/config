@@ -183,14 +183,14 @@ bindsym $mod+r mode "resize"
 
 
 # System control bindings
-bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_SINK@ toggle
-bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_SINK@ 2%-
-bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 2%+
-bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_SOURCE@ toggle
+bindsym --locked XF86AudioMute exec ~/.config/sway/set-volume-and-notify.sh toggle-sink
+bindsym --locked XF86AudioLowerVolume exec ~/.config/sway/set-volume-and-notify.sh decrease-sink
+bindsym --locked XF86AudioRaiseVolume exec ~/.config/sway/set-volume-and-notify.sh increase-sink
+bindsym --locked XF86AudioMicMute exec ~/.config/sway/set-volume-and-notify.sh toggle-source
 
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-bindsym --locked Alt+F5 exec ~/.config/sway/brightnessctl-toggle.sh
+bindsym --locked XF86MonBrightnessDown exec ~/.config/sway/set-brightness-and-notify.sh decrease
+bindsym --locked XF86MonBrightnessUp exec ~/.config/sway/set-brightness-and-notify.sh increase
+bindsym --locked Alt+F5 exec ~/.config/sway/set-brightness-and-notify.sh toggle
 
 bindsym Print exec flameshot gui
 
