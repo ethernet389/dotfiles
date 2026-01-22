@@ -9,12 +9,8 @@ seat * xcursor_theme default 20
 # Start ydotool daemon
 exec ydotoold
 
-# Set random wallpaper on config reload
-# set $wallpapers_path ~/.config/sway/wallpapers
-# output * bg '$(find $wallpapers_path -type f | shuf -n 1)' fill
-
-# Set random wallpaper each N minutes
-# exec ~/.config/sway/change_wallpaper_on_time.sh
+# Start battery notificiations
+exec ~/.config/sway/battery-status-notify.sh
 
 output * bg ~/.config/sway/wallpapers/fractal.png fill
 
@@ -203,24 +199,3 @@ bindsym Print exec flameshot gui
 bar {
   swaybar_command waybar
 }
-
-# bar {
-#     position top
-# 
-#     status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-# 
-#     colors {
-#         background         $base
-#         statusline         $text
-#         focused_statusline $text
-#         focused_separator  $base
-#     
-#         # target           border bg        text
-#         focused_workspace  $base  $mauve    $crust
-#         active_workspace   $base  $surface2 $text
-#         inactive_workspace $base  $base     $text
-#         urgent_workspace   $base  $red      $crust
-#     }
-# }
-
-include /etc/sway/config.d/*
