@@ -2,6 +2,11 @@
 
 Style: _Catppuccin Mocha_
 
+## Pictures
+![Blank Screen](./assets/blank_screen.jpg)
+![Rofi Screen](./assets/nvim_fetch_rofi_screen.jpg)
+![GTK Apps](./assets/some_apps.jpg)
+
 ## Needed software
 - `swayfx`            (only used for `corner_radius` in sway config)
 - `waybar` 
@@ -80,10 +85,3 @@ Keyboard typing display tool (`wshowkeys`):
 | Combination | Result                                          |
 | :---------  | :----                                           |
 | `$mod+F11`  | Enable/Disable displaying keyboard interactions |
-
-
-## Pictures
-![Blank Screen](./assets/blank_screen.jpg)
-![Rofi Screen](./assets/nvim_fetch_rofi_screen.jpg)
-![GTK Apps](./assets/some_apps.jpg)
-
