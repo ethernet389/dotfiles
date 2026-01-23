@@ -186,6 +186,8 @@ bindsym $mod+r mode "resize"
 bindsym --locked XF86AudioMute exec ~/.config/sway/set-volume-and-notify.sh toggle-sink
 bindsym --locked XF86AudioLowerVolume exec ~/.config/sway/set-volume-and-notify.sh decrease-sink
 bindsym --locked XF86AudioRaiseVolume exec ~/.config/sway/set-volume-and-notify.sh increase-sink
+bindsym --locked Alt+XF86AudioLowerVolume exec ~/.config/sway/set-volume-and-notify.sh decrease-source
+bindsym --locked Alt+XF86AudioRaiseVolume exec ~/.config/sway/set-volume-and-notify.sh increase-source
 bindsym --locked XF86AudioMicMute exec ~/.config/sway/set-volume-and-notify.sh toggle-source
 
 bindsym --locked XF86MonBrightnessDown exec ~/.config/sway/set-brightness-and-notify.sh decrease

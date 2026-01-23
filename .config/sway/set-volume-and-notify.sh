@@ -22,9 +22,19 @@ elif [ "$1" = "decrease-sink" ]; then
     || notify-send-configured "Failed to decrease sink volume"
 
 elif [ "$1" = "toggle-sink" ]; then
-  wpctl set-mute @DEFAULT_SINK@ toggle \ 
+  wpctl set-mute @DEFAULT_SINK@ toggle \
     && notify-send-configured "(Un)mute sink" "$(wpctl get-volume @DEFAULT_SINK@)" \
     || notify-send-configured "Failed to (un)mute sink"
+
+elif [ "$1" = "increase-source" ]; then
+  wpctl set-volume @DEFAULT_SOURCE@ 2%+ \
+    && notify-send-configured "Increase source volume" "$(wpctl get-volume @DEFAULT_SOURCE@)" \
+    || notify-send-configured "Failed to increase source volume"
+
+elif [ "$1" = "decrease-source" ]; then
+  wpctl set-volume @DEFAULT_SOURCE@ 2%- \
+    && notify-send-configured "Decrease source volume" "$(wpctl get-volume @DEFAULT_SOURCE@)" \
+    || notify-send-configured "Failed to decrease source volume"
 
 elif [ "$1" = "toggle-source" ]; then
   wpctl set-mute @DEFAULT_SOURCE@ toggle \
