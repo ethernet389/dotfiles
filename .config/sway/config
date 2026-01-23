@@ -192,6 +192,13 @@ bindsym --locked XF86MonBrightnessDown exec ~/.config/sway/set-brightness-and-no
 bindsym --locked XF86MonBrightnessUp exec ~/.config/sway/set-brightness-and-notify.sh increase
 bindsym --locked Alt+F5 exec ~/.config/sway/set-brightness-and-notify.sh toggle
 
+bindsym $mod+o exec ~/.config/sway/control-player-and-notify.sh stop
+bindsym $mod+p exec ~/.config/sway/control-player-and-notify.sh play-pause
+bindsym $mod+bracketleft exec ~/.config/sway/control-player-and-notify.sh previous
+bindsym $mod+bracketright exec ~/.config/sway/control-player-and-notify.sh next
+bindsym $mod+Alt+bracketleft exec ~/.config/sway/control-player-and-notify.sh decrease-level
+bindsym $mod+Alt+bracketright exec ~/.config/sway/control-player-and-notify.sh increase-level
+
 # Screenshot tool
 bindsym Print exec flameshot gui
 
@@ -200,6 +207,7 @@ bindsym Insert exec wooz
 
 # Keyboard display tool
 bindsym --locked Alt+F4 exec "pkill -x wshowkeys > /dev/null || wshowkeys -a bottom -l 60 -F 'monospace 24'"
+
 # Status bar
 bar {
   swaybar_command waybar

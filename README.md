@@ -16,6 +16,7 @@ Needed software:
 - `zsh` 
 - `wooz` (bind Insert in sway config)
 - `wshowkeys-mao-git` (bind Alt+F4 in sway config)
+- `playerctl` (check binds in sway config)
 
 *NB0*: I am sure that I am missing some software.
 

@@ -1,6 +1,13 @@
 #!/bin/sh
 
 BATTERY_PATH="/sys/class/power_supply/BAT1/"
+NOTIFICATION_LIFETIME=5000
+
+notify-send-configured() {
+  notify-send \
+    -t $NOTIFICATION_LIFETIME \
+    "$@"
+}
 
 predeath_level=2
 extreme_low_level=5
@@ -25,12 +32,12 @@ while true; do
   current_delta=$(($last_notified_level - $current_level))
 
   if [ $current_level -le $predeath_level ]; then
-    notify-send  -t 5000 "Predeath Battery Level!" "Beg you, charge me now ($current_level)."
+    notify-send-configured "Predeath Battery Level!" "Beg you, charge me now ($current_level)."
   elif [ $current_level -le $extreme_low_level ] && [ $current_delta -ge $level_threshold ]; then
-    notify-send -t 5000 "Extreme Low Battery Level!" "Please, charge me ($current_level)."
+    notify-send-configured "Extreme Low Battery Level!" "Please, charge me ($current_level)."
     last_notified_level=$current_level
   elif [ $current_level -le $low_level ] && [ $current_delta -ge $level_threshold ]; then
-    notify-send  -t 5000 "Low Battery Level!" "Charge me ($current_level)."
+    notify-send-configured "Low Battery Level!" "Charge me ($current_level)."
     last_notified_level=$current_level
   fi
 
