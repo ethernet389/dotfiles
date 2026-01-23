@@ -43,7 +43,7 @@ elif [ "$1" = "increase-level" ]; then
 
 elif [ "$1" = "decrease-level" ]; then
   playerctl-configured volume 0.05- \
-    && notify-send-configured "Decrease player volumeby 5%" "$(playerctl-configured volume)" \
+    && notify-send-configured "Decrease player volume by 5%" "$(playerctl-configured volume)" \
     || notify-send-configured "Failed to increase player volume"
 
 
