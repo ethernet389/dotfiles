@@ -7,10 +7,10 @@ seat * xcursor_theme default 20
 # seat * hide_cursor 1000
 
 # Start ydotool daemon
-exec ydotoold
+exec_always pgrep -x ydotoold || ydotoold
 
 # Start battery notificiations
-exec ~/.config/sway/battery-status-notify.sh
+exec pgrep -x battery-status- || ~/.config/sway/battery-status-notify.sh
 
 output * bg ~/.config/sway/wallpapers/fractal.png fill
 
