@@ -5,7 +5,7 @@ include "/home/glbe/.gtkrc-2.0.mine"
 gtk-theme-name="catppuccin-mocha-mauve-standard+default"
 gtk-icon-theme-name="Adwaita"
 gtk-font-name="Adwaita Sans 11"
-gtk-cursor-theme-name="Adwaita"
+gtk-cursor-theme-name="kasane-teto-cursors"
 gtk-cursor-theme-size=20
 gtk-toolbar-style=GTK_TOOLBAR_ICONS
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
