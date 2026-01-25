@@ -210,7 +210,7 @@ bindsym $mod+Alt+bracketright exec "$scripts_dir/control-player-and-notify.sh in
 bindsym $mod+Print exec flameshot gui
 
 # Magnifier tool
-bindsym $mod+Insert exec wooz
+bindsym $mod+Insert exec woomer
 
 # Colorpicker tool
 bindsym $mod+Alt+Insert exec hyprpicker --autocopy
