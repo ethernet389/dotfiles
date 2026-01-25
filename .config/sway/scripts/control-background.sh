@@ -1,43 +1,57 @@
 #!/bin/sh
 
-JOURNAL_PATH="$1"
 
 MARKED_BACKGROUND_PATH="$2"
 UNMARKED_BACKGROUND_PATH="$3"
 
-setup-new-bg() {
-  OLD_PID="$(pgrep -x swaybg)"
+JOURNAL_PATH="$4"
 
-  swaybg "$@" &
-  sleep 0.2
+update-bg() {
+  local OLD_PID="$(pgrep -x swaybg)"
+
+  swaybg -o '*' -m fill -i "$1" &
+  sleep 0.1
 
   if [ -n "$OLD_PID" ]; then
     kill -TERM $OLD_PID
   fi
 }
 
-setup-new-bg-configured() {
-  setup-new-bg -m fill -o '*' -i "$1"
-  echo "$1" > "$JOURNAL_PATH"
+update-bg-and-journal() {
+  update-bg "$1" && echo "$1" > "$JOURNAL_PATH"
 }
 
-swap-bg-configured() {
-  current_bg="$(cat "$JOURNAL_PATH")"
+restore-bg() {
+  if bg_path="$(cat "$JOURNAL_PATH")"; then
+    update-bg "$bg_path"
+  else
+    update-bg-and-journal "$UNMARKED_BACKGROUND_PATH"
+  fi 
+}
 
-  if [ -z "$current_bg" ]; then
-    setup-new-bg-configured "$MARKED_BACKGROUND_PATH"
-    return 0
-  fi
+swap-bg() {
+  if pgrep -x swaybg && bg_path="$(cat "$JOURNAL_PATH")"; then
+    case "$bg_path" in
+      "$UNMARKED_BACKGROUND_PATH")
+        update-bg-and-journal "$MARKED_BACKGROUND_PATH"        
+      ;;
 
-  case "$current_bg"
+      *)
+        update-bg-and-journal "$UNMARKED_BACKGROUND_PATH"
+      ;;
+    esac
+  else
+    update-bg-and-journal "$UNMARKED_BACKGROUND_PATH"
+  fi 
 }
 
 
-if $(pgrep -x swaybg); then
-  
+case "$1" in
+  "restore")
+    restore-bg
+  ;;
 
-else
-  
-
-  setup-new-bg-configured "$(cat "$JOURNAL_PATH")" 
-fi
+  "swap")
+    swap-bg
+  ;;
+esac

@@ -1,6 +1,18 @@
 # Aliases for paths
 set $sway_dir "~/.config/sway"
 set $scripts_dir "$sway_dir/scripts"
+set $wallpapers_dir "$sway_dir/wallpapers"
+
+# Keys
+set $mod   Mod4
+set $left  h
+set $down  j
+set $up    k
+set $right l
+
+set $term     alacritty
+set $menu     rofi -show drun -modes "drun"
+
 
 # Theme and font
 include themes/catppuccin-mocha
@@ -13,8 +25,11 @@ seat * xcursor_theme default 20
 # Start ydotool daemon
 exec_always pgrep -x ydotoold || ydotoold
 
+# Setup wallpaper
+output "*" bg "$wallpapers_dir/unmarked_butcher_teto.png" fill
+
 # Start battery notificiations
-exec pgrep -x battery-status- || "$scripts_dir/battery-status-notify.sh"
+exec_always pgrep -x battery-status- || && "$scripts_dir/battery-status-notify.sh"
 
 # target                 title     bg    text   indicator  border
 client.focused           $lavender $base $text  $rosewater $lavender
@@ -23,17 +38,6 @@ client.unfocused         $overlay0 $base $text  $rosewater $overlay0
 client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
-
-
-# Keys
-set $mod   Mod4
-set $left  h
-set $down  j
-set $up    k
-set $right l
-
-set $term     alacritty
-set $menu     rofi -show drun -modes "drun"
 
 
 # Input/Output
