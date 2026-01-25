@@ -9,6 +9,7 @@ Style: _Catppuccin Mocha_
 
 ## Needed software
 - `swayfx`            (only used for `corner_radius` in sway config)
+- `swaybg`
 - `waybar` 
 - `brightnessctl`     (scripts in sway config folder)
 - `wireplumber`       (binds in sway config)
