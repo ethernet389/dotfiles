@@ -19,7 +19,7 @@ include themes/catppuccin-mocha
 font pango: AdwaitaMono Nerd Font 10
 
 # Cursor settings
-seat * xcursor_theme default 20
+seat * xcursor_theme kasane-teto-cursors 20
 # seat * hide_cursor 1000
 
 # Start ydotool daemon
