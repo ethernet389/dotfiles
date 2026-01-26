@@ -25,8 +25,10 @@ seat * xcursor_theme default 20
 # Start ydotool daemon
 exec_always pgrep -x ydotoold || ydotoold
 
-# Setup wallpaper
+# Setup wallpaper and binds
 output "*" bg "$wallpapers_dir/unmarked_butcher_teto.png" fill
+bindsym $mod+b exec "$scripts_dir/control-background.sh $wallpapers_dir/unmarked_butcher_teto.png"
+bindsym $mod+Alt+b exec "$scripts_dir/control-background.sh $wallpapers_dir/marked_butcher_teto.png"
 
 # Start battery notificiations
 exec_always pgrep -x battery-status- || && "$scripts_dir/battery-status-notify.sh"
