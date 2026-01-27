@@ -6,6 +6,7 @@
 - `waybar`
 - `brightnessctl`
 - `pipewire` (optionally: `pipewire-jack`, `pipewire-pulse`, `pipewire-alsa`)
+- `xorg-xwayland`
 - `wireplumber`
 - `mako`
 - `rofi`
