@@ -1,7 +1,4 @@
-#!/bin/sh
-
-
-BACKGROUND_PATH="$1"
+#!/usr/bin/env bash
 
 OLD_PID="$(pgrep -x swaybg)"
 

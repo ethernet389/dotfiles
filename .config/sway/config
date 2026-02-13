@@ -30,9 +30,6 @@ output "*" bg "$wallpapers_dir/unmarked_butcher_teto.png" fill
 bindsym $mod+b exec "$scripts_dir/control-background.sh $wallpapers_dir/unmarked_butcher_teto.png"
 bindsym $mod+Shift+b exec "$scripts_dir/control-background.sh $wallpapers_dir/marked_butcher_teto.png"
 
-# Start battery notificiations
-exec_always pgrep -x battery-status- || && "$scripts_dir/battery-status-notify.sh"
-
 # target                 title     bg    text   indicator  border
 client.focused           $lavender $base $text  $rosewater $lavender
 client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0

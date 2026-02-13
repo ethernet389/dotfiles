@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 PLAYERCTL_OPTS="--player=vlc,mpd,%any,firefox"
 NOTIFICATION_LIFETIME=2000
@@ -50,7 +50,7 @@ elif [ "$1" = "decrease-level" ]; then
   playerctl-configured volume 0.05- \
     && notify-send-configured "Decrease player ($(playerctl-configured metadata --format '{{playerName}}')) volume by 5%" \
       "$(playerctl-configured volume)" \
-    || notify-send-configured "Failed to increase player volume"
+    || notify-send-configured "Failed to decrease player volume"
 
 
 

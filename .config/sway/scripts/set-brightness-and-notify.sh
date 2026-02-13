@@ -1,5 +1,4 @@
-#!/bin/sh
-
+#!/usr/bin/env bash
 
 NOTIFICATION_LIFETIME=2000
 BRIGHTNESS_CONTROL_ID="string:x-canonical-private-synchronous:brightness_control"

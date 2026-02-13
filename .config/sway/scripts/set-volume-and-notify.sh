@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 NOTIFICATION_LIFETIME=2000
 AUDIO_CONTROL_ID="string:x-canonical-private-synchronous:audio_control"
