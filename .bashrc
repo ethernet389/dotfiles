@@ -33,7 +33,6 @@ PS1=$(ps1_date_blk)$(ps1_bash_ver_blk)'\n'$(ps1_user_host_pwd_blk)${cyn}'\n\$ '$
 HISTFILE=~/.bash_history
 HISTSIZE=10000
 HISTFILESIZE=10000
-HISTTIMEFORMAT="%F %T "
 HISTCONTROL="ingoredups:ingorespace"
 
 # Aliases
