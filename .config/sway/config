@@ -26,9 +26,9 @@ seat * xcursor_theme kasane-teto-cursors 20
 exec_always pgrep -x ydotoold || ydotoold
 
 # Setup wallpaper and binds
-output "*" bg "$wallpapers_dir/solar_system.png" center
-# bindsym $mod+b exec "$scripts_dir/control-background.sh $wallpapers_dir/teto_multiple_inabakumori.jpeg"
-# bindsym $mod+Shift+b exec "$scripts_dir/control-background.sh $wallpapers_dir/teto_alone_inabakumori.jpeg"
+output "*" bg "$wallpapers_dir/unmarked_butcher_teto.png" center
+bindsym $mod+b exec "$scripts_dir/control-background.sh $wallpapers_dir/unmarked_butcher_teto.png"
+bindsym $mod+Shift+b exec "$scripts_dir/control-background.sh $wallpapers_dir/marked_butcher_teto.png"
 
 # target                 title     bg    text   indicator  border
 client.focused           $lavender $base $text  $rosewater $lavender

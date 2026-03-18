@@ -24,10 +24,11 @@ ps1_bash_ver_blk() {
 }
 
 ps1_user_host_pwd_blk() {
-	echo ${red}'<'${grn}'\u'${red}'@'${grn}'\H'${clr}':'${ylw}'\w'${red}'>'${clr}
+	echo ${red}'<'${grn}'\u'${red}'@'${grn}'\H'${red}':'${ylw}'\w'${red}'>'${clr}
 }
 
 PS1=$(ps1_date_blk)$(ps1_bash_ver_blk)'\n'$(ps1_user_host_pwd_blk)${cyn}'\n\$ '${clr}
+PS2=${cyn}'> '${clr}
 
 # Setup bash history
 HISTFILE=~/.bash_history
@@ -36,6 +37,7 @@ HISTFILESIZE=10000
 HISTCONTROL="ingoredups:ingorespace"
 
 # Aliases
+alias ls="ls --color"
 alias vi="nvim"
 alias vim="nvim"
 alias sway="sway --unsupported-gpu"
