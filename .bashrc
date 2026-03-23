@@ -43,5 +43,17 @@ alias vim="nvim"
 alias sway="sway --unsupported-gpu"
 alias nmtui="unset COLORTERM; TERM=xterm-old nmtui; export COLORTERM=truecolor"
 
+# Cd into dir on vifm exit
+vicm() {
+  local dest="$(command vifm --choose-dir - "$@")"
+
+  if [[ -z "$dest" ]]; then
+    echo "Directory picking failed." >&2
+    return 1
+  fi
+
+  cd "$dest"
+}
+
 # Some Rider shit
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
