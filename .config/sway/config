@@ -22,9 +22,6 @@ font pango: AdwaitaMono Nerd Font 10
 seat * xcursor_theme kasane-teto-cursors 20
 # seat * hide_cursor 1000
 
-# Start ydotool daemon
-exec_always pgrep -x ydotoold || ydotoold
-
 # Setup wallpaper and binds
 output "*" bg "$wallpapers_dir/unmarked_butcher_teto.png" center
 bindsym $mod+b exec "$scripts_dir/control-background.sh $wallpapers_dir/unmarked_butcher_teto.png"
