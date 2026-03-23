@@ -5,15 +5,15 @@ set -o vi
 shopt -s histappend
 
 # Setup prompts
-blk='\[\033[01;30m\]'   # Black
-red='\[\033[01;31m\]'   # Red
-grn='\[\033[01;32m\]'   # Green
-ylw='\[\033[01;33m\]'   # Yellow
-blu='\[\033[01;34m\]'   # Blue
-pur='\[\033[01;35m\]'   # Purple
-cyn='\[\033[01;36m\]'   # Cyan
-wht='\[\033[01;37m\]'   # White
-clr='\[\033[00m\]'      # Reset
+blk='\[\033[01;30m\]'	# Black
+red='\[\033[01;31m\]'	# Red
+grn='\[\033[01;32m\]'	# Green
+ylw='\[\033[01;33m\]'	# Yellow
+blu='\[\033[01;34m\]'	# Blue
+pur='\[\033[01;35m\]'	# Purple
+cyn='\[\033[01;36m\]'	# Cyan
+wht='\[\033[01;37m\]'	# White
+clr='\[\033[00m\]'		# Reset
 
 ps1_date_blk() {
 	echo ${red}'['${cyn}'\D{%Y-%m-%d %H-%M-%S %a}'${red}']'${clr}
@@ -27,8 +27,8 @@ ps1_user_host_pwd_blk() {
 	echo ${red}'<'${grn}'\u'${red}'@'${grn}'\H'${red}':'${ylw}'\w'${red}'>'${clr}
 }
 
-PS1=$(ps1_date_blk)$(ps1_bash_ver_blk)'\n'$(ps1_user_host_pwd_blk)${cyn}'\n\$ '${clr}
-PS2=${cyn}'> '${clr}
+export PS1=$(ps1_date_blk)$(ps1_bash_ver_blk)'\n'$(ps1_user_host_pwd_blk)${cyn}'\n\$ '${clr}
+export PS2=${cyn}'> '${clr}
 
 # Setup bash history
 HISTFILE=~/.bash_history
@@ -48,8 +48,8 @@ vicm() {
   local dest="$(command vifm --choose-dir - "$@")"
 
   if [[ -z "$dest" ]]; then
-    echo "Directory picking failed." >&2
-    return 1
+	echo "Directory picking failed." >&2
+	return 1
   fi
 
   cd "$dest"

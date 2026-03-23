@@ -48,8 +48,8 @@ require("lazy").setup({
       name = "mason-lspconfig",
 
       dependencies = {
-        "mason",
-        "lspconfig",
+	"mason",
+	"lspconfig",
       },
 
       opts = {
@@ -82,21 +82,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = bufnr }
 
     -- Mappings
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)                  -- Go to definition
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)                        -- Hover
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)              -- Go to implementation
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)                  -- Go to references
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)               -- Rename
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)		     -- Go to definition
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)			     -- Hover
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)		     -- Go to implementation
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)		     -- Go to references
+    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)		     -- Rename
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts) -- Actions
 
     -- Diagnostic
-    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)          -- Previous error
-    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)          -- Next error
+    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)	       -- Previous error
+    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)	       -- Next error
     vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)   -- Show error in floating window
 
     if client:supports_method('textDocument/formatting') then
       vim.keymap.set('n', '<space>f', function()
-        vim.lsp.buf.format({ async = true })
+	vim.lsp.buf.format({ async = true })
       end, opts)
     end
   end,
@@ -106,12 +106,22 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- Preferences
 vim.cmd.colorscheme "catppuccin-mocha"
 
--- vim.g.syntax_on = true
+vim.g.syntax_on = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.opt.clipboard = "unnamedplus"
+
 vim.opt.relativenumber = true
-vim.opt.smartindent = true
-vim.opt.smarttab = true
-vim.opt.shiftwidth = 2
 vim.opt.number = true
+
+vim.opt.expandtab = false
+vim.opt.softtabstop = 4
+vim.opt.tabstop = 4
+
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.shiftwidth = 4
+
+vim.opt.list = true
+vim.opt.listchars = "tab:|-"
