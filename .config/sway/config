@@ -206,7 +206,7 @@ bindsym $mod+Alt+bracketright exec "$scripts_dir/control-player-and-notify.sh in
 bindsym $mod+x exec flameshot gui
 
 # Screenlock tool
-bindsym $mod+Print exec swaylock
+bindsym $mod+n exec swaylock
 
 # Magnifier tool
 bindsym $mod+z exec wooz

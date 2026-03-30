@@ -55,5 +55,15 @@ vicm() {
   cd "$dest"
 }
 
+bullshit() {
+	if ! [[ "$1" -gt 0 ]]; then
+		echo "Cannot produce bullshit of length '$1'" >&2
+		return 1
+	fi
+
+	tr -cd '[:graph:]' < /dev/urandom | head -c "$1"
+	echo
+}
+
 # Some Rider shit
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
