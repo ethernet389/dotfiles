@@ -15,55 +15,61 @@ cyn='\[\033[01;36m\]'	# Cyan
 wht='\[\033[01;37m\]'	# White
 clr='\[\033[00m\]'		# Reset
 
+# Some shit prompts
 ps1_date_blk() {
-	echo ${red}'['${cyn}'\D{%Y-%m-%d %H-%M-%S %a}'${red}']'${clr}
+	printf '%s[%s\D{%%Y-%%m-%%d %%H-%%M-%%S %%a}%s]%s' "$red" "$cyn" "$red" "$clr"
 }
 
 ps1_bash_ver_blk() {
-	echo ${red}'['${cyn}'Bash \v'${red}']'${clr}
+	printf '%s[%sBash \\v%s]%s' "$red" "$cyn" "$red" "$clr"
 }
 
 ps1_user_host_pwd_blk() {
-	echo ${red}'<'${grn}'\u'${red}'@'${grn}'\H'${red}':'${ylw}'\w'${red}'>'${clr}
+	printf '%s<%s\\u%s@%s\H%s:%s\w%s>%s' "$red" "$grn" "$red" "$grn" "$red" "$ylw" "$red" "$clr"
 }
 
-export PS1=$(ps1_date_blk)$(ps1_bash_ver_blk)'\n'$(ps1_user_host_pwd_blk)${cyn}'\n\$ '${clr}
-export PS2=${cyn}'> '${clr}
+export PS1 PS2 PS4
+PS1="$(ps1_date_blk)$(ps1_bash_ver_blk)\n$(ps1_user_host_pwd_blk)${cyn}\n\$ ${clr}"
+PS2="${cyn}> ${clr}"
+PS4="-> "
+
 
 # Setup bash history
-HISTFILE=~/.bash_history
-HISTSIZE=10000
-HISTFILESIZE=10000
-HISTCONTROL="ingoredups:ingorespace"
+export HISTFILE=~/.bash_history
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+export HISTCONTROL="ignorespace"
 
 # Aliases
 alias ls="ls --color"
 alias vi="nvim"
 alias vim="nvim"
 alias sway="sway --unsupported-gpu"
-alias nmtui="unset COLORTERM; TERM=xterm-old nmtui; export COLORTERM=truecolor"
+
 
 # Cd into dir on vifm exit
-vicm() {
-  local dest="$(command vifm --choose-dir - "$@")"
+nmtui() {
+	(unset COLORTERM; TERM=xterm-old command nmtui)
+}
+
+vifm() {
+  local dest
+  dest="$(command vifm --choose-dir - "$@")"
 
   if [[ -z "$dest" ]]; then
 	echo "Directory picking failed." >&2
 	return 1
   fi
 
-  cd "$dest"
+  cd "$dest" || return 1
 }
 
 bullshit() {
 	if ! [[ "$1" -gt 0 ]]; then
-		echo "Cannot produce bullshit of length '$1'" >&2
+		echo "Can't produce bullshit of length '$1'" >&2
 		return 1
 	fi
 
 	tr -cd '[:graph:]' < /dev/urandom | head -c "$1"
 	echo
 }
-
-# Some Rider shit
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi

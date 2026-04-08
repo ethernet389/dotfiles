@@ -6,44 +6,50 @@
   "modules-right": ["cpu", "memory", "backlight", "wireplumber", "network", "battery"],
 
   "clock": {
-    "format": "\uf017 {:%Y-%m-%d %H-%M-%S}",
+    "format": "{:%Y-%m-%d %H-%M-%S}",
     "interval": 1
   },
 
   "cpu": {
-    "format": "\uf4bc {usage}%",
+    "format": "CPU: {usage}%",
   },
 
   "memory": {
-    "format": "\uefc5 {percentage}% ({used} GiB)",
+    "format": "MEM: {percentage}% ({used} GiB)",
     "unit": "GiB"
   },
 
   "backlight": {
     "on-click": "~/.config/waybar/brightnessctl_toggle.sh",
-    "format": "\uf400 {percent}%"
+    "format": "BRI: {percent}%"
   },
 
   "wireplumber": {
-    "format": "\uf028  {volume}%",
-    "format-muted": "\ueee8  {volume}%",
+    "format": "VOL: {volume}%",
+    "format-muted": "VOL (MUTE): {volume}%",
     "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
     "scroll-step": 2
   },
 
   "network": {
-    "format-wifi": "\uf012  {signalStrength}% {essid}",
-    "format-ethernet": "\uf0200 {bandwidthTotalBytes} bytes/sec",
-    "format-disconnected": "\uf52f  No Signal"
+    "format-wifi": "WIFI ({essid}): {signalStrength}%",
+    "format-ethernet": "ETH: {bandwidthTotalBytes} bytes/sec",
+    "format-disconnected": "No Signal"
   },
 
   "battery": {
-    "states": {
-      "good": 80,
-      "warning": 30,
-      "critical": 10
-    },
-
-    "format": "\uf240 {capacity}% {time}"
+	"interval": 60,
+	"states": {
+		"warning": 30,
+		"critical": 15,
+		"predeath": 5
+	},
+	"events": {
+		"on-discharging-warning": "notify-send -u normal 'Low Battery'",
+		"on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+		"on-discharging-predeath": "notify-send -u critical 'Pre-death Battery'",
+		"on-charging-100": "notify-send -u normal 'Battery full'"
+	},
+    "format": "BAT: {capacity}% {time}"
   }
 }
